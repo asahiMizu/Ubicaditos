@@ -1,5 +1,5 @@
 ```python
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Float 
 from app.database import Base
 
 class Bus(Base):
@@ -9,4 +9,6 @@ class Bus(Base):
     plate_number = Column(String, unique=True, index=True)
     capacity = Column(Integer)
     status = Column(String, default="idle")  # idle | en_route | maintenance
+    latitude = Column(Float, nullable=True)
+    longitude = Column(Float, nullable=True)
 ```
